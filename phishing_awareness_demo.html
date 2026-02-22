@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Congratulations! You Won ₹10 Lakhs!</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0 0 10px gray;
+        }
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🎉 Congratulations!</h2>
+    <p>You have won ₹10 Lakhs!</p>
+    <p>To claim your prize, fill the details below:</p>
+
+    <form onsubmit="showAlert(event)">
+        <input type="text" placeholder="Full Name" required><br>
+        <input type="date" required><br>
+        <input type="text" placeholder="Bank Account Number (Demo Only)" required><br>
+        <input type="text" placeholder="IFSC Code (Demo Only)" required><br>
+        <button type="submit">Finish</button>
+    </form>
+</div>
+
+<script>
+function showAlert(event) {
+    event.preventDefault();
+    alert("⚠️ This was a Social Engineering Awareness Demo!\n\nNever share bank details or personal information through suspicious links.\n\nYou were about to be scammed!");
+}
+</script>
+
+</body>
+</html>
