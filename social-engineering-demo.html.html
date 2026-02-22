@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Congratulations! You Won ₹10 Lakhs!</title>
+    <title>Security Awareness Training Demo</title>
     <style>
         body {
             font-family: Arial;
@@ -13,7 +13,7 @@
             background: white;
             padding: 20px;
             border-radius: 10px;
-            width: 400px;
+            width: 450px;
             margin: auto;
             box-shadow: 0 0 10px gray;
         }
@@ -32,28 +32,52 @@
         button:hover {
             background-color: darkgreen;
         }
+        .output-box {
+            margin-top: 20px;
+            background: #fff3cd;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            display: none; /* Hidden initially */
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>🎉 Congratulations!</h2>
-    <p>You have won ₹10 Lakhs!</p>
-    <p>To claim your prize, fill the details below:</p>
+    <h2>🔐 Social Engineering Awareness Demo</h2>
+    <p>This is a training simulation. Do NOT enter real banking details.</p>
 
-    <form onsubmit="showAlert(event)">
-        <input type="text" placeholder="Full Name" required><br>
-        <input type="date" required><br>
-        <input type="text" placeholder="Bank Account Number (Demo Only)" required><br>
-        <input type="text" placeholder="IFSC Code (Demo Only)" required><br>
-        <button type="submit">Finish</button>
+    <form onsubmit="captureData(event)">
+        <input type="text" id="name" placeholder="Full Name (Demo)" required><br>
+        <input type="date" id="dob" required><br>
+        <input type="text" id="account" placeholder="Account Number (Demo)" required><br>
+        <input type="text" id="ifsc" placeholder="IFSC Code (Demo)" required><br>
+        <button type="submit">Submit</button>
     </form>
+
+    <div id="result" class="output-box"></div>
 </div>
 
 <script>
-function showAlert(event) {
+function captureData(event) {
     event.preventDefault();
-    alert("⚠️ This was a Social Engineering Awareness Demo!\n\nNever share bank details or personal information through suspicious links.\n\nYou were about to be scammed!");
+
+    let name = document.getElementById("name").value;
+    let dob = document.getElementById("dob").value;
+    let account = document.getElementById("account").value;
+    let ifsc = document.getElementById("ifsc").value;
+
+    let resultBox = document.getElementById("result");
+    resultBox.style.display = "block";
+
+    resultBox.innerHTML =
+        "<b>Captured Form Data (Demo Only):</b><br>" +
+        "Name: " + name + "<br>" +
+        "Date of Birth: " + dob + "<br>" +
+        "Account Number: " + account + "<br>" +
+        "IFSC Code: " + ifsc + "<br><br>" +
+        "⚠️ This demonstrates how attackers can capture your information.";
 }
 </script>
 
